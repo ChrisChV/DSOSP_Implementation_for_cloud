@@ -34,10 +34,26 @@ public class DSOS{
                     }
                 }
                 randonMumber = getRandomNumberDiff(0, numOrg, i);
-
+                Vector<Integer> temp1 = getMutationBenefit(organisms.get(i), organisms.get(randomNumber), taskLengs.size());
+                Vector<Integer> temp2 = getMutationBenefit(organisms.get(randonMumber), organisms.get(i), taskLengs.size());
+                if(getFitness(organisms.get(i)) > getFitness(temp1)){
+                    organisms.set(i, temp1);
+                }
+                if(getFitness(organisms.get(randomNumber)) > getFitness(temp2)){
+                    organisms.set(randonMumber, temp2);
+                }
+                randonMumber = getRandomNumberDiff(0, numOrg, i);
+                Vector<Integer> temp3 = comensalims(organisms.get(randomNumber), taskLengs.size());
+                if(getFitness(organisms.get(i)) > getFitness(temp3)){
+                    organisms.set(i, temp3);
+                }
+                randonMumber = getRandomNumberDiff(0, numOrg, i);
+                Vector<Integer> temp4 = getParasito(organisms.get(i), taskLengs.size());
+                if(getFitness(organisms.get(j)) > getFitness(temp4)){
+                    organisms.set(j,temp4);
+                }
             }
         }
-        
     }
 
     private void generateETC_matrix(Vector<integer> taskLengs, Vector<Integer> vmCost){
@@ -83,6 +99,16 @@ public class DSOS{
     }
 
 
+    private Vector<Integer> comensalims(Vector<Integer> a, int tamTask){
+        Double randomNumber = getRandomNumber(0, 1);
+        return modOrganism( ceilOrganism( multOrganism(minusOrganismInt(best, a), randomNumber)) ,m );
+    }
+
+    private Vector<Integer> getParasito(Vector<Integer> a, int tamTask){
+        Double randomNUmber = getRandomNumber(0, 1);
+        return modOrganism(ceilOrganism(multOrganismInt(a, randomNUmber)), m);
+    }
+
     public static int getRandomNumber(int min, int max){
         int x = (Math.random()*((max-min)+1))+min;
         return x;
@@ -116,7 +142,15 @@ public class DSOS{
         return res;
     }
 
-   
+    public Vector<Double> minusOrganismInt(Vector<Integer> a, Vector<Integer> b){
+        Vector<Double> res = new Vector<Double>(a.size());
+        for(int i = 0; i < a.size(); i++){
+            for(int j = 0; j < b.size(); j++){
+                res.add(Double(Math.abs(a.get(i) - b.get(i))));
+            }
+        }
+        return res;
+    } 
 
     public Vector<Double> minusOrganism(Vector<Double> a, Vector<Double> b){
         Vector<Double> res = new Vector<Double>(a.size());
@@ -128,6 +162,14 @@ public class DSOS{
         return res;
     } 
     
+    public Vector<Double> multOrganismInt(Vector<Integer> a, Double b){
+        Vector<Double> res = new Vector<Double>(a.size());
+        for(int i = 0; i < a.size(); i++){
+            res.add(a.get(i) * b);
+        }
+        return res;
+    }
+
     public Vector<Double> multOrganism(Vector<Double> a, Double b){
         Vector<Double> res = new Vector<Double>(a.size());
         for(int i = 0; i < a.size(); i++){
@@ -158,6 +200,10 @@ public class DSOS{
             res.add(i % m);
         }
         return res;
+    }
+
+    public Vector<Integer> getBest(){
+        return best;
     }
 
 }

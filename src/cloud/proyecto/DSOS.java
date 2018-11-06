@@ -9,15 +9,16 @@ import java.util.Vector;
 
 public class DSOS{
     
-    private Vector<Vector<Double>> ETC_matrix;
+    private Vector<Vector<Double>> ETC_matrix; //Fila: Vm //Columna: Task
 
     public void execute(Vector<Integer> taskLengs, Vector<Integer> vmCost, int numOrg, int iterations){
-        Vector<Vector<Integer>> organisms;
+        Vector<Vector<Integer>> organisms; //Fila: Vm //Columna: Task
         int iter = 0;
         Vector<Integer> best = null;
+        generateETC_matrix(taskLengs, vmCost);
         while(iter != iterations){
             iter++;
-            
+               
         }
         
     }
@@ -34,7 +35,15 @@ public class DSOS{
         }
     }
 
-    
-    
-
+    private Double getFitness(Vector<Integer> organism){
+        Double res = -1;
+        Double tempRes = 0;
+        for(int i = 0; i < organism.size(); i++){
+            tempRes = ETC_matrix.get(i).get(organism.get(i));
+            if(res == -1 || res < tempRes){
+                res = tempRes;
+            }
+        }
+        return res;
+    }
 }

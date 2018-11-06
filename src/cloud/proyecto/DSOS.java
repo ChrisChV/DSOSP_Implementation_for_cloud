@@ -74,10 +74,12 @@ public class DSOS{
         return res;
     }
 
-    private Double getMutationBenefit(Vector<Integer> organism){
-        Double res = 0;
+    //Si queremos obtener el mutation benefit de un organismo X, este tiene que ir en el parametro organismI ;
+    private Vector<Integer> getMutationBenefit(Vector<Integer> organismI, Vector<Integer> organismJ, int tamTask){
+        Vector<Double> res = 0;
         Double randomNumber = getRandomNumber(0, 1);
-
+        Double randomNumberF = getRandomNumber(1, 2);
+        return modOrganism( ceilOrganism(sumOrganismsDou( organismI , multOrganism( minusOrganism(best,  multOrganism( divOrganism(sumOrganismsInt(organismI, organismJ), Double(2)) , randomNumber2)) , randomNumber))), tamTask);
     }
 
 
@@ -94,7 +96,17 @@ public class DSOS{
         }
     }
 
-    public Vector<Double> sumOrganisms(Vector<Double> a, Vector<Double> b){
+    public Vector<Double> sumOrganismsInt(Vector<Integer> a, Vector<Integer> b){
+        Vector<Double> res = new Vector<Double>(a.size());
+        for(int i = 0; i < a.size(); i++){
+            for(int j = 0; j < b.size(); j++){
+                res.add(Double(a.get(i) + b.get(i)));
+            }
+        }
+        return res;
+    }
+
+    public Vector<Double> sumOrganismsDou(Vector<Double> a, Vector<Double> b){
         Vector<Double> res = new Vector<Double>(a.size());
         for(int i = 0; i < a.size(); i++){
             for(int j = 0; j < b.size(); j++){
@@ -103,6 +115,8 @@ public class DSOS{
         }
         return res;
     }
+
+   
 
     public Vector<Double> minusOrganism(Vector<Double> a, Vector<Double> b){
         Vector<Double> res = new Vector<Double>(a.size());
@@ -126,6 +140,22 @@ public class DSOS{
         Vector<Double> res = new Vector<Double>(a.size());
         for(int i = 0; i < a.size(); i++){
             res.add(a.get(i) / b);
+        }
+        return res;
+    }
+
+    public Vector<Integer> ceilOrganism(Vector<Double> a){
+        Vector<Integer> res = new Vector<Integer>(a.size());
+        for(Double d : a){
+            res.add(Integer(Math.ceil(d)));
+        }
+        return res;
+    }
+
+    public Vector<Integer> modOrganism(Vector<Integer> a, int m){
+        Vector<Integer> res = new Vector<Integer>(a.size());
+        for(Integer i : a){
+            res.add(i % m);
         }
         return res;
     }

@@ -51,13 +51,14 @@ public class DSOS{
         Vector<Vector<Integer>> res = new Vector<Vector<Integer>>(numOrg);
         for(int i = 0; i < res.size(); i++){
             for(int j = 0; j < numTasks; j++){
-                //res.get(i).add()
+                res.get(i).add(getRandom(0, numVM));
             }
         }
+        return res;
     }
 
-    public static double getRandomDoubleBetweenRange(double min, double max){
-        double x = (Math.random()*((max-min)+1))+min;
+    public static int getRandom(int min, int max){
+        int x = (Math.random()*((max-min)+1))+min;
         return x;
     }
     

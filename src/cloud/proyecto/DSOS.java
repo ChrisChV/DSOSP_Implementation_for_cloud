@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Vector;
+import java.lang.Math;
 
 public class DSOS{
     
@@ -18,7 +19,6 @@ public class DSOS{
         generateETC_matrix(taskLengs, vmCost);
         while(iter != iterations){
             iter++;
-               
         }
         
     }
@@ -46,4 +46,19 @@ public class DSOS{
         }
         return res;
     }
+
+    private Vector<Vector<Integer>> getRandomOrganisms(int numOrg, int numVM ,int numTasks){
+        Vector<Vector<Integer>> res = new Vector<Vector<Integer>>(numOrg);
+        for(int i = 0; i < res.size(); i++){
+            for(int j = 0; j < numTasks; j++){
+                //res.get(i).add()
+            }
+        }
+    }
+
+    public static double getRandomDoubleBetweenRange(double min, double max){
+        double x = (Math.random()*((max-min)+1))+min;
+        return x;
+    }
+    
 }

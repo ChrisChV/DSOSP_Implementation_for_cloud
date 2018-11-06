@@ -13,12 +13,26 @@ public class DSOS{
     private Vector<Vector<Double>> ETC_matrix; //Fila: Vm //Columna: Task
 
     public void execute(Vector<Integer> taskLengs, Vector<Integer> vmCost, int numOrg, int iterations){
-        Vector<Vector<Integer>> organisms; //Fila: Vm //Columna: Task
+        Vector<Vector<Integer>> organisms = getRandomOrganisms(numOrg, vmCost.size(), taskLengs.size()); //Fila: Vm //Columna: Task
         int iter = 0;
         Vector<Integer> best = null;
+        Double bestFitness = -1;
+        Double tempFitness = 0;
+        int randonMumber = 0;
         generateETC_matrix(taskLengs, vmCost);
         while(iter != iterations){
             iter++;
+            for(int i = 0; i < numOrg; i++){
+                for(int j = 0; j < numOrg; j++){
+                    tempFitness = getFitness(organisms.get(j));
+                    if(bestFitness == -1 || bestFitness > tempFitness){
+                        bestFitness = tempFitness;
+                        best = organisms.get(i);
+                    }
+                }
+                randonMumber = getRandomNumberDiff(0, numOrg, i);
+                
+            }
         }
         
     }
@@ -51,15 +65,23 @@ public class DSOS{
         Vector<Vector<Integer>> res = new Vector<Vector<Integer>>(numOrg);
         for(int i = 0; i < res.size(); i++){
             for(int j = 0; j < numTasks; j++){
-                res.get(i).add(getRandom(0, numVM));
+                res.get(i).add(getRandomNumber(0, numVM));
             }
         }
         return res;
     }
 
-    public static int getRandom(int min, int max){
+    public static int getRandomNumber(int min, int max){
         int x = (Math.random()*((max-min)+1))+min;
         return x;
+    }
+
+    public int getRandomNumberDiff(int min, int max, int diff){
+        int x = 0;
+        while(true){
+            x = (Math.random()*((max-min)+1))+min;
+            if(x != diff) return x;
+        }
     }
     
 }

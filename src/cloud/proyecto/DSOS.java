@@ -8,14 +8,17 @@ import java.util.List;
 import java.util.Vector;
 import java.lang.Math;
 
+//TODO Dar vuelta a la ETC_matrix Vm/T;
+
 public class DSOS{
     
     private Vector<Vector<Double>> ETC_matrix; //Fila: Vm //Columna: Task
+    private Vector<Integer> best = null;
 
     public void execute(Vector<Integer> taskLengs, Vector<Integer> vmCost, int numOrg, int iterations){
         Vector<Vector<Integer>> organisms = getRandomOrganisms(numOrg, vmCost.size(), taskLengs.size()); //Fila: Vm //Columna: Task
         int iter = 0;
-        Vector<Integer> best = null;
+        best = null;
         Double bestFitness = -1;
         Double tempFitness = 0;
         int randonMumber = 0;
@@ -31,7 +34,7 @@ public class DSOS{
                     }
                 }
                 randonMumber = getRandomNumberDiff(0, numOrg, i);
-                
+
             }
         }
         
@@ -71,6 +74,13 @@ public class DSOS{
         return res;
     }
 
+    private Double getMutationBenefit(Vector<Integer> organism){
+        Double res = 0;
+        Double randomNumber = getRandomNumber(0, 1);
+
+    }
+
+
     public static int getRandomNumber(int min, int max){
         int x = (Math.random()*((max-min)+1))+min;
         return x;
@@ -83,5 +93,41 @@ public class DSOS{
             if(x != diff) return x;
         }
     }
+
+    public Vector<Double> sumOrganisms(Vector<Double> a, Vector<Double> b){
+        Vector<Double> res = new Vector<Double>(a.size());
+        for(int i = 0; i < a.size(); i++){
+            for(int j = 0; j < b.size(); j++){
+                res.add(a.get(i) + b.get(i));
+            }
+        }
+        return res;
+    }
+
+    public Vector<Double> minusOrganism(Vector<Double> a, Vector<Double> b){
+        Vector<Double> res = new Vector<Double>(a.size());
+        for(int i = 0; i < a.size(); i++){
+            for(int j = 0; j < b.size(); j++){
+                res.add(Math.abs(a.get(i) - b.get(i)));
+            }
+        }
+        return res;
+    } 
     
+    public Vector<Double> multOrganism(Vector<Double> a, Double b){
+        Vector<Double> res = new Vector<Double>(a.size());
+        for(int i = 0; i < a.size(); i++){
+            res.add(a.get(i) * b);
+        }
+        return res;
+    }
+
+    public Vector<Double> divOrganism(Vector<Double> a, Double b){
+        Vector<Double> res = new Vector<Double>(a.size());
+        for(int i = 0; i < a.size(); i++){
+            res.add(a.get(i) / b);
+        }
+        return res;
+    }
+
 }

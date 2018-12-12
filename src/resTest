@@ -1,0 +1,180 @@
+Time: 3570.545362
+---- Grupo 0 ----
+0 18
+1 18
+2 15
+Makespan: 0.0014
+Fitness: ---- Grupo 1 ----
+0 11
+1 19
+2 9
+Makespan: 0.0016
+Fitness: Total Makespan: 0.003
+Time: 1135.622712
+---- Grupo 0 ----
+0 18
+1 19
+Makespan: 7.999999999999999E-4
+Fitness: ---- Grupo 1 ----
+0 19
+1 18
+2 11
+3 18
+Makespan: 0.0021333333333333334
+Fitness: Total Makespan: 0.0029333333333333334
+Time: 1082.688047
+---- Grupo 0 ----
+0 17
+1 19
+Makespan: 6.222222222222223E-4
+Fitness: ---- Grupo 1 ----
+0 19
+1 18
+2 12
+3 19
+Makespan: 0.0017285714285714287
+Fitness: Total Makespan: 0.002350793650793651
+Time: 1232.679428
+---- Grupo 0 ----
+0 18
+Makespan: 3.0E-4
+Fitness: ---- Grupo 1 ----
+0 17
+1 11
+2 18
+3 6
+4 9
+Makespan: 0.0031277777777777775
+Fitness: Total Makespan: 0.0034277777777777774
+Time: 970.063444
+---- Grupo 0 ----
+0 16
+1 19
+2 18
+Makespan: 7.222222222222222E-4
+Fitness: ---- Grupo 1 ----
+0 16
+1 19
+2 16
+Makespan: 0.002022222222222222
+Fitness: Total Makespan: 0.0027444444444444443
+Time: 1030.047934
+---- Grupo 0 ----
+0 9
+1 19
+Makespan: 0.0017000000000000001
+Fitness: ---- Grupo 1 ----
+0 14
+1 13
+2 15
+3 18
+Makespan: 0.0027642857142857143
+Fitness: Total Makespan: 0.004464285714285714
+Time: 996.892479
+---- Grupo 0 ----
+0 18
+1 18
+Makespan: 0.0014
+Fitness: ---- Grupo 1 ----
+0 15
+1 19
+2 12
+3 11
+Makespan: 0.0025023809523809525
+Fitness: Total Makespan: 0.0039023809523809523
+Time: 1009.900224
+---- Grupo 0 ----
+0 19
+1 15
+2 17
+Makespan: 0.002163888888888889
+Fitness: ---- Grupo 1 ----
+0 19
+1 18
+2 10
+Makespan: 0.0019666666666666665
+Fitness: Total Makespan: 0.004130555555555556
+Time: 996.700025
+---- Grupo 0 ----
+0 2
+1 19
+Makespan: 0.0013
+Fitness: ---- Grupo 4 ----
+0 18
+1 16
+2 19
+3 18
+Makespan: 0.002788888888888889
+Fitness: Total Makespan: 0.0040888888888888884
+Time: 1033.689538
+---- Grupo 0 ----
+0 19
+1 17
+Makespan: 0.0011222222222222222
+Fitness: ---- Grupo 1 ----
+0 19
+1 12
+2 18
+3 14
+Makespan: 0.0027392857142857145
+Fitness: Total Makespan: 0.0038615079365079364
+Time: 1392.613569
+---- Grupo 0 ----
+0 12
+1 18
+2 19
+Makespan: 0.002214285714285714
+Fitness: ---- Grupo 1 ----
+0 10
+1 19
+2 16
+Makespan: 0.0019222222222222223
+Fitness: Total Makespan: 0.0041365079365079365
+Time: 992.601087
+---- Grupo 0 ----
+0 10
+1 18
+Makespan: 0.0013
+Fitness: ---- Grupo 1 ----
+0 15
+1 19
+2 2
+3 19
+Makespan: 0.002875
+Fitness: Total Makespan: 0.004175
+Time: 1027.448137
+---- Grupo 0 ----
+0 14
+1 18
+Makespan: 7.750000000000001E-4
+Fitness: ---- Grupo 1 ----
+0 16
+1 19
+2 19
+3 17
+Makespan: 0.0025
+Fitness: Total Makespan: 0.003275
+Time: 1033.536592
+---- Grupo 0 ----
+0 19
+1 18
+Makespan: 0.0015
+Fitness: ---- Grupo 1 ----
+0 18
+1 18
+2 18
+3 19
+Makespan: 0.0036
+Fitness: Total Makespan: 0.0051
+Time: 1076.861204
+---- Grupo 0 ----
+0 19
+1 15
+Makespan: 0.001425
+Fitness: ---- Grupo 1 ----
+0 19
+1 19
+2 16
+3 18
+Makespan: 0.0027777777777777775
+Fitness: Total Makespan: 0.0042027777777777775
